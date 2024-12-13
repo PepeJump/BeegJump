@@ -13,6 +13,11 @@ public class OpenURL : MonoBehaviour
     [Header("Reward URL")]
     [SerializeField] private string rewardURL = "https://github.com/PepeJump/BeegJump";
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     // Sandık üzerine gelince ödül ekranı açılır
     private void OnTriggerEnter2D(Collider2D collision)
     {
