@@ -65,13 +65,26 @@ public class MoneyManager : MonoBehaviour
 
         while (Time.time - startTime < duration)
         {
+            if (startPosition == null)
+                yield return null;
+
+            if (endPosition == null)
+                yield return null;
+
             float t = (Time.time - startTime) / duration;
-            moneySprite.transform.position = Vector3.Lerp(startPosition, endPosition, t);
+
+            if (moneySprite != null)
+            {
+                moneySprite.transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            }
             yield return null;
         }
 
         // Ensure the sprite reaches the exact position
-        moneySprite.transform.position = endPosition;
+        if (moneySprite != null && endPosition != null)
+        {
+            moneySprite.transform.position = endPosition;      
+        }
 
         // Destroy the money sprite
         Destroy(moneySprite);

@@ -180,9 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d8dea43b8b744408c411816bbfa298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minJumpForce: 0.75
-  maxJumpForce: 19.5
-  maxHoldTime: 0.7
+  minJumpForce: 0.7
+  maxJumpForce: 23
+  maxHoldTime: 0.9
   moveSpeed: 7
   groundCheckRadius: 0.25
   groundLayer:
