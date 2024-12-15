@@ -91,7 +91,7 @@ public class MoneyManager : MonoBehaviour
 
         // Update the money amount and animate the money text
         UpdateMoneyUI();
-        StartCoroutine(AnimateMoneyText());
+        //StartCoroutine(AnimateMoneyText());
 
         // Play a sound effect when money is added
         AudioSource audioSource = GetComponent<AudioSource>();
