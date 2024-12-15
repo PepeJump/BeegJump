@@ -122,9 +122,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   damage: 10
-  moneyReward: 5
+  moneyReward: 90
   healthBarFill: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  isCollected: 0
+  coinID: 
   coinCollectedSFX: {fileID: 8300000, guid: 64528d725e950c44c807d2d2713ff0b0, type: 3}
 --- !u!61 &3249063649325427175
 BoxCollider2D:
