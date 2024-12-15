@@ -12,12 +12,19 @@ public class Player : MonoBehaviour
 
     public float pushBackForce = 10f;
 
+    public AudioClip bubleSound;
     public AudioClip attackSound; // Assign your attack sound effect in the Inspector
     public ParticleSystem attackParticle; // Assign your attack particle effect in the Inspector
     private AudioSource audioSource; // Reference to the AudioSource component
+    private ParticleSystem particleSystem;
+    private bool hasPlayedSound = false; // To ensure sound plays only once per burst
 
     public Image healthBarFill;  // Reference to the health bar fill image
 
+    private void Awake()
+    {
+        particleSystem = GetComponentInChildren<ParticleSystem>();
+    }
     void Start()
     {
         currentHealth = maxHealth;
@@ -25,6 +32,26 @@ public class Player : MonoBehaviour
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>(); // Add an AudioSource component if it doesn't exist
+        }
+    }
+
+    private void Update()
+    {
+        BubbleSound();
+    }
+
+    private void BubbleSound()
+    {
+        // Check if there are active particles
+        if (particleSystem.particleCount > 0 && !hasPlayedSound)
+        {
+            AudioManager.instance.PlaySoundSFX(bubleSound);
+            hasPlayedSound = true; // Mark sound as played for this burst
+        }
+        else if (particleSystem.particleCount == 0)
+        {
+            // Reset the flag when there are no active particles
+            hasPlayedSound = false;
         }
     }
 
@@ -53,7 +80,6 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player Died");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
         spriteRenderer.color = originalColor;
     }
 
-    void Die()
+    protected virtual void Die()
     {
         // Trigger the OnDeath event
         OnDeath?.Invoke();

@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class LevelEnd : MonoBehaviour
 {
-    public float levelEndDelay = 1f; // Time to wait before showing the level selection
+    private float levelEndDelay = 0.05f; // Time to wait before showing the level selection
+
+    [SerializeField]private ParticleSystem particleFX;
+
+    private void Awake()
+    {
+        particleFX = GetComponentInChildren<ParticleSystem>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
+        {           
+            if(particleFX != null)
+                particleFX.Pause();
+
             // Trigger the level end process
             StartCoroutine(LevelComplete());
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (particleFX != null)
+                particleFX.Play();
+
+            if (UIManager.Instance.levelSelectionPanel.activeInHierarchy)
+            {
+                UIManager.Instance.CloseLevelSelection();
+            }
+        }
+        
     }
 
     private IEnumerator LevelComplete()

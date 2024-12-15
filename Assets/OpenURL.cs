@@ -13,9 +13,13 @@ public class OpenURL : MonoBehaviour
     [Header("Reward URL")]
     [SerializeField] private string rewardURL = "https://github.com/PepeJump/BeegJump";
 
+    [Header("AnimationL")]
+    Animator animator;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
+        animator = GetComponent<Animator>();
     }
 
     // Sandık üzerine gelince ödül ekranı açılır
@@ -24,6 +28,7 @@ public class OpenURL : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             OpenPopUp();
+            PlayOpenAnimation();
         }
     }
 
@@ -33,6 +38,7 @@ public class OpenURL : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ClosePopUp();
+            PlayCloseAnimation();
         }
     }
 
@@ -60,5 +66,21 @@ public class OpenURL : MonoBehaviour
             return;
 
         rewardURLPopUp.SetActive(false);
+    }
+
+    private void PlayOpenAnimation()
+    {
+        if (animator == null)
+            return;
+
+        animator.Play("chest_animation_01");
+    }
+
+    private void PlayCloseAnimation()
+    {
+        if (animator == null)
+            return;
+
+        animator.Play("chest_animation_02");
     }
 }
