@@ -166,7 +166,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07714157, y: 0.06216652}
+  m_Offset: {x: -0.07714157, y: 0.6603054}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -177,7 +177,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29223305, y: 0.4738925}
+  m_Size: {x: 0.29223305, y: 1.6701701}
   m_EdgeRadius: 0
 --- !u!1 &6794810153251815347
 GameObject:
@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 5858577278008950586}
   - component: {fileID: 2315589325222938408}
   - component: {fileID: 443779172468576059}
+  - component: {fileID: 3091804118867687707}
   m_Layer: 3
   m_Name: Level4Boss
   m_TagString: Enemy
@@ -227,9 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d648c36d835e0ae499990657850545bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 800
-  damage: 50
-  moneyReward: 1000
+  maxHealth: 400
+  damage: 35
+  moneyReward: 250
   healthBarFill: {fileID: 9069694146454637357}
   spriteRenderer: {fileID: 9115770546599477379}
 --- !u!50 &443779172468576059
@@ -259,6 +260,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!95 &3091804118867687707
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794810153251815347}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5be92e6ea25f28a47b66d3048f237fe4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8742862730289781274
 GameObject:
   m_ObjectHideFlags: 0

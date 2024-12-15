@@ -13,8 +13,11 @@ public class OpenURL : MonoBehaviour
     [Header("Reward URL")]
     [SerializeField] private string rewardURL = "https://github.com/PepeJump/BeegJump";
 
-    [Header("AnimationL")]
+    [Header("Animation")]
     Animator animator;
+
+    [Header("Audio")]
+    [SerializeField]private AudioClip popUpSound;
 
     private void Awake()
     {
@@ -55,6 +58,7 @@ public class OpenURL : MonoBehaviour
             return;
 
         rewardURLPopUp.SetActive(true);
+        AudioManager.instance.PlaySoundSFX(popUpSound);
 
         EventSystem.current.SetSelectedGameObject(null);
     }

@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 5858577278008950586}
   - component: {fileID: 2315589325222938408}
   - component: {fileID: 443779172468576059}
+  - component: {fileID: 3091804118867687707}
   m_Layer: 3
   m_Name: Level2Boss
   m_TagString: Enemy
@@ -259,6 +260,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!95 &3091804118867687707
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794810153251815347}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5be92e6ea25f28a47b66d3048f237fe4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8742862730289781274
 GameObject:
   m_ObjectHideFlags: 0
