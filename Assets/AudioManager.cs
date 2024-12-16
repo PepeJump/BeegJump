@@ -6,7 +6,9 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public AudioSource audioSource;
+    public AudioSource audioSourceSFX;
+    public AudioSource audioSourceMusic;
+    public AudioClip themeMusic;
 
     private void Awake()
     {
@@ -15,14 +17,20 @@ public class AudioManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        audioSource = GetComponent<AudioSource>();
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        audioSourceMusic.clip = themeMusic;
+        audioSourceMusic.Play();
     }
 
     public void PlaySoundSFX(AudioClip soundFX)
     {
-        if (audioSource != null)
+        if (audioSourceSFX != null)
         {
-            audioSource.PlayOneShot(soundFX);            
+            audioSourceSFX.PlayOneShot(soundFX);            
         }
     }
 

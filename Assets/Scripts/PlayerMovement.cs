@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private bool wasGrounded = false; // Stores the previous grounded state
 
     private AudioSource audioSource; // Reference to the AudioSource component
+    private Player player;
 
     public Transform groundCheck; // Empty GameObject positioned at the player's feet
 
@@ -43,11 +44,16 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 colliderDefaultXOffset;
     private CapsuleCollider2D playerCollider;
 
-    void Start()
+    private void Awake()
     {
+        player = GetComponent<Player>();
         playerCollider = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+    }
+
+    void Start()
+    {
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>(); // Add an AudioSource component if it doesn't exist
@@ -72,6 +78,9 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleInput()
     {
+        if (player.isDead == true)
+            return;
+
         // Start holding the jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -113,6 +122,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        if (player.isDead == true)
+            return;
         // Calculate jump force based on hold time
         float jumpForce = Mathf.Lerp(minJumpForce, maxJumpForce, holdTime / maxHoldTime);
         float horizontalJump = lastMoveDirection * moveSpeed;
@@ -126,6 +137,8 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckGrounded()
     {
+        if (player.isDead == true)
+            return;
         // Check if the player is grounded using a small circle at the groundCheck position
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
@@ -172,6 +185,8 @@ public class PlayerMovement : MonoBehaviour
     // Add a new method to handle the attack state
     public void StartAttack()
     {
+        if (player.isDead == true)
+            return;
         isAttacking = true;
         // Choose a random attack sprite only once when the attack starts
         int attackSpriteIndex = Random.Range(0, 2);

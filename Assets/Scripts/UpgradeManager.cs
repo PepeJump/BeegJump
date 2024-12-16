@@ -7,6 +7,9 @@ using UnityEngine.EventSystems;
 
 public class UpgradeManager : MonoBehaviour
 {
+    public AudioClip upgradeSFX;
+    public AudioClip notEnoughMoneySFX;
+
     // References to the UI buttons and texts
     public Button healthUpgradeButton;
     public Button damageUpgradeButton;
@@ -111,6 +114,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (healthUpgradeLevel < maxHealthUpgradeLevel && moneyManager.currentMoney >= healthUpgradePrices[healthUpgradeLevel])
         {
+            PlayUpgradeSFX();
             // Upgrade the health
             player.maxHealth += healthUpgradeValues[healthUpgradeLevel];
             player.currentHealth += healthUpgradeValues[healthUpgradeLevel];
@@ -133,6 +137,10 @@ public class UpgradeManager : MonoBehaviour
             // Reset the maxed text
             healthMaxedText.text = "";
         }
+        else if(moneyManager.currentMoney <= healthUpgradePrices[healthUpgradeLevel])
+        {
+            PlayNotEnoughMoneySFX();
+        }
         else if (healthUpgradeLevel >= maxHealthUpgradeLevel)
         {
             // Disable the health upgrade button and UI
@@ -149,6 +157,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (damageUpgradeLevel < maxDamageUpgradeLevel && moneyManager.currentMoney >= damageUpgradePrices[damageUpgradeLevel])
         {
+            PlayUpgradeSFX();
             // Upgrade the damage
             player.damage += damageUpgradeValues[damageUpgradeLevel];
             damageCurrentValueText.text = player.damage.ToString();
@@ -169,6 +178,10 @@ public class UpgradeManager : MonoBehaviour
             // Reset the maxed text
             damageMaxedText.text = "";
         }
+        else if (moneyManager.currentMoney <= healthUpgradePrices[healthUpgradeLevel])
+        {
+            PlayNotEnoughMoneySFX();
+        }
         else if (damageUpgradeLevel >= maxDamageUpgradeLevel)
         {
             // Disable the damage upgrade button and UI
@@ -185,6 +198,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (armorUpgradeLevel < maxArmorUpgradeLevel && moneyManager.currentMoney >= armorUpgradePrices[armorUpgradeLevel])
         {
+            PlayUpgradeSFX();
             // Upgrade the armor
             player.armor += armorUpgradeValues[armorUpgradeLevel];
             armorCurrentValueText.text = player.armor.ToString();
@@ -205,6 +219,10 @@ public class UpgradeManager : MonoBehaviour
             // Reset the maxed text
             armorMaxedText.text = "";
         }
+        else if (moneyManager.currentMoney <= healthUpgradePrices[healthUpgradeLevel])
+        {
+            PlayNotEnoughMoneySFX();
+        }
         else if (armorUpgradeLevel >= maxArmorUpgradeLevel)
         {
             // Disable the armor upgrade button and UI
@@ -216,6 +234,16 @@ public class UpgradeManager : MonoBehaviour
         }
         EventSystem.current.SetSelectedGameObject(null);
     }
+
+    private void PlayUpgradeSFX()
+    {
+        AudioManager.instance.PlaySoundSFX(upgradeSFX);
+    }
+    private void PlayNotEnoughMoneySFX()
+    {
+        AudioManager.instance.PlaySoundSFX(notEnoughMoneySFX);
+    }
+
     private void SaveUpgrades()
     {
         // Save the upgrade levels

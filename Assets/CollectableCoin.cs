@@ -25,17 +25,6 @@ public class CollectableCoin : Enemy
         gameObject.SetActive(isCollected == 0);
     }
 
-    //debug, delete later
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C)) // Press C to clear saved data
-        {
-            PlayerPrefs.DeleteAll();
-            PlayerPrefs.Save();
-        }
-    }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

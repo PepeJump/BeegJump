@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -13,17 +13,25 @@ public class Player : MonoBehaviour
     public float pushBackForce = 10f;
 
     public AudioClip bubleSound;
+    private Animator animator;
+    private PlayerMovement player;
     public AudioClip attackSound; // Assign your attack sound effect in the Inspector
     public ParticleSystem attackParticle; // Assign your attack particle effect in the Inspector
     private AudioSource audioSource; // Reference to the AudioSource component
     private ParticleSystem particleSystem;
+    public ParticleSystem deathBubbles;
     private bool hasPlayedSound = false; // To ensure sound plays only once per burst
+    public bool isDead = false;
 
+    public GameObject healthBar;  // Reference to the health bar fill image
     public Image healthBarFill;  // Reference to the health bar fill image
+    public GameObject playerVisual;
 
     private void Awake()
     {
         particleSystem = GetComponentInChildren<ParticleSystem>();
+        player = GetComponent<PlayerMovement>();
+        animator = GetComponent<Animator>();
     }
     void Start()
     {
@@ -33,11 +41,19 @@ public class Player : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>(); // Add an AudioSource component if it doesn't exist
         }
+
+        isDead = false;
     }
 
     private void Update()
     {
         BubbleSound();
+
+        if (Input.GetKeyDown(KeyCode.K)) // Press C to clear saved data
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+        }
     }
 
     private void BubbleSound()
@@ -79,6 +95,48 @@ public class Player : MonoBehaviour
     void Die()
     {
         Debug.Log("Player Died");
+        StartCoroutine(DeathTime());
+    }
+
+    private IEnumerator DeathTime()
+    {
+        isDead = true;
+
+        float elapsed = 0f;
+        float duration = 2f; // Duration of the death animation
+
+        Vector3 initialScale = playerVisual.transform.localScale; // Original scale
+        Vector3 targetScale = Vector3.zero; // Scale to shrink to
+
+        if (animator != null)
+        {
+            animator.enabled = false;
+        }
+
+        deathBubbles.Play();
+        AudioManager.instance.PlaySoundSFX(bubleSound);
+
+        yield return new WaitForSeconds(0.25f);
+
+        healthBar.SetActive(false);
+
+        while (elapsed < duration)
+        {
+            // Lerp the scale over time
+            playerVisual.transform.localScale = Vector3.Lerp(initialScale, targetScale, elapsed / duration);
+
+            // Rotate the visual as it scales
+            playerVisual.transform.Rotate(0, 0, 300 * Time.deltaTime);
+
+            elapsed += Time.deltaTime;
+            yield return null; // Wait for the next frame
+        }
+
+        // Ensure it is fully scaled to zero at the end
+        playerVisual.transform.localScale = targetScale;
+
+
+        // Reload the scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

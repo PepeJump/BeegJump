@@ -1041,14 +1041,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4539effaef7a9844ab8dcfd02a35f371, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d27ecd6fdc669834ab5867ad334e2bbd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1303,14 +1303,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4539effaef7a9844ab8dcfd02a35f371, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d27ecd6fdc669834ab5867ad334e2bbd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1468,14 +1468,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4539effaef7a9844ab8dcfd02a35f371, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d27ecd6fdc669834ab5867ad334e2bbd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2719,6 +2719,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd05b853f4f7c654099ed9fc5ef55cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeSFX: {fileID: 8300000, guid: 789e57bb2b67e434b8ff6cf81afe3c5e, type: 3}
+  notEnoughMoneySFX: {fileID: 8300000, guid: c77975d0eb4706f41a1a8be96d8447ae, type: 3}
   healthUpgradeButton: {fileID: 6123246943766287304}
   damageUpgradeButton: {fileID: 2707952851913566248}
   armorUpgradeButton: {fileID: 6142011872267375847}
