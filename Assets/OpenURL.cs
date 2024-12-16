@@ -21,7 +21,6 @@ public class OpenURL : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
         animator = GetComponent<Animator>();
     }
 

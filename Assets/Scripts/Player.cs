@@ -74,7 +74,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(float amount)
     {
         // Calculate the effective damage after armor mitigation
-        float effectiveDamage = Mathf.Max(0f, amount - armor);
+        float effectiveDamage = amount - armor;
+
+        // Ensure the player takes at least 1 damage if effective damage is greater than 0
+        effectiveDamage = effectiveDamage > 0 ? effectiveDamage : 3f;
 
         currentHealth -= effectiveDamage;
         UpdateHealthBar();

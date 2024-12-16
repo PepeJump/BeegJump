@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1555,16 +1555,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010715105151671482}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4158977488090131372}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 56, y: -118.8}
+  m_AnchoredPosition: {x: 11.4, y: -58.400024}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &77178092534415236
@@ -1595,7 +1595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 103761509, guid: db19a86e92a6f6f499130b3dbefd85f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c2c344e7fc6b4a4c87d7d7455dff6a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2174,7 +2174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2249,7 +2249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2702,9 +2702,9 @@ RectTransform:
   - {fileID: 6878910330156556237}
   m_Father: {fileID: 7233132017636334503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -221.36646, y: 394.98444}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 12.6, y: 387.7}
   m_SizeDelta: {x: 170.6644, y: 167.8029}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1720737272949978478
@@ -2739,7 +2739,7 @@ MonoBehaviour:
   armorUpgradePriceText: {fileID: 8083825450987615146}
   armorUpgradeLevelText: {fileID: 209206049614868418}
   armorMaxedText: {fileID: 3667212183901729476}
-  healthUpgradePrices: 050000000a000000140000001e000000280000003c00000050000000640000007d00000096000000c8000000fa0000002c01000077010000c2010000260200008a020000ee02000052030000e8030000
+  healthUpgradePrices: 050000000a000000140000001e000000280000003c00000050000000640000007d00000096000000c8000000fa0000002c01000077010000c2010000260200008a020000ee02000052030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000
   healthUpgradeValues:
   - 15
   - 15
@@ -2761,7 +2761,37 @@ MonoBehaviour:
   - 30
   - 30
   - 30
-  damageUpgradePrices: 050000000a000000140000001e000000280000003c00000050000000640000007d00000096000000c8000000fa0000002c01000077010000c2010000260200008a020000ee02000052030000e8030000
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  damageUpgradePrices: 050000000a000000140000001e000000280000003c00000050000000640000007d00000096000000c8000000fa0000002c01000077010000c2010000260200008a020000ee02000052030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000
   damageUpgradeValues:
   - 4
   - 4
@@ -2783,7 +2813,37 @@ MonoBehaviour:
   - 10
   - 10
   - 10
-  armorUpgradePrices: 050000000a000000140000001e000000280000003c00000050000000640000007d00000096000000c8000000fa0000002c01000077010000c2010000260200008a020000ee02000052030000e8030000
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  armorUpgradePrices: 050000000a000000140000001e000000280000003c00000050000000640000007d00000096000000c8000000fa0000002c01000077010000c2010000260200008a020000ee02000052030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000
   armorUpgradeValues:
   - 1
   - 1
@@ -2805,9 +2865,39 @@ MonoBehaviour:
   - 4
   - 5
   - 5
-  maxHealthUpgradeLevel: 19
-  maxDamageUpgradeLevel: 19
-  maxArmorUpgradeLevel: 19
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  maxHealthUpgradeLevel: 49
+  maxDamageUpgradeLevel: 49
+  maxArmorUpgradeLevel: 49
   maxedText: {fileID: 0}
 --- !u!114 &7992395540740190945
 MonoBehaviour:
@@ -4423,7 +4513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 11.300049, y: -3.5999756}
+  m_AnchoredPosition: {x: 11.9, y: -8.400024}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8037743854883064761
@@ -4454,7 +4544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2039243148, guid: db19a86e92a6f6f499130b3dbefd85f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8a40d35a64f17e43b6345a11bd2b907, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
