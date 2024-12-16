@@ -5566,7 +5566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7109c1c96a12104289c0dd75c6dbb8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customCursor: {fileID: 2800000, guid: acd20e2995ced6b46b3c399baec759fc, type: 3}
+  customCursor: {fileID: 2800000, guid: 93ef194fa2d1dd84990dfd4552e56080, type: 3}
   cursorHotspot: {x: 0, y: 0}
 --- !u!82 &5322841877234298171
 AudioSource:
