@@ -49,11 +49,11 @@ public class Player : MonoBehaviour
     {
         BubbleSound();
 
-        if (Input.GetKeyDown(KeyCode.K)) // Press C to clear saved data
-        {
-            PlayerPrefs.DeleteAll();
-            PlayerPrefs.Save();
-        }
+        //if (Input.GetKeyDown(KeyCode.K)) // Press C to clear saved data
+        //{
+        //    PlayerPrefs.DeleteAll();
+        //    PlayerPrefs.Save();
+        //}
     }
 
     private void BubbleSound()
