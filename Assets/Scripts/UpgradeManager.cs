@@ -21,6 +21,7 @@ public class UpgradeManager : MonoBehaviour
     public TextMeshProUGUI healthUpgradePriceText;
     public TextMeshProUGUI healthUpgradeLevelText;
     public TextMeshProUGUI healthMaxedText;
+    public GameObject healthArrow;
 
     [Space(5)]
 
@@ -30,6 +31,7 @@ public class UpgradeManager : MonoBehaviour
     public TextMeshProUGUI damageUpgradePriceText;
     public TextMeshProUGUI damageUpgradeLevelText;
     public TextMeshProUGUI damageMaxedText;
+    public GameObject damageArrow;
 
     [Space(5)]
 
@@ -39,6 +41,7 @@ public class UpgradeManager : MonoBehaviour
     public TextMeshProUGUI armorUpgradePriceText;
     public TextMeshProUGUI armorUpgradeLevelText;
     public TextMeshProUGUI armorMaxedText;
+    public GameObject armorArrow;
 
     [Space(5)]
 
@@ -59,12 +62,9 @@ public class UpgradeManager : MonoBehaviour
     private int armorUpgradeLevel = 0;
 
     // Max levels for each upgrade
-    public int maxHealthUpgradeLevel = 10;
-    public int maxDamageUpgradeLevel = 10;
-    public int maxArmorUpgradeLevel = 10;
-
-    // Reference to the "Maxed" text
-    public TextMeshProUGUI maxedText;
+    public int maxHealthUpgradeLevel = 49;
+    public int maxDamageUpgradeLevel = 49;
+    public int maxArmorUpgradeLevel = 49;
 
     // Reference to the MoneyManager
     private MoneyManager moneyManager;
@@ -149,6 +149,7 @@ public class UpgradeManager : MonoBehaviour
             healthUpgradeValueText.text = "";
             healthUpgradeLevelText.text = "";
             healthMaxedText.text = "Maxed";
+            healthArrow.SetActive(false);
         }
         EventSystem.current.SetSelectedGameObject(null);
     }
@@ -190,6 +191,7 @@ public class UpgradeManager : MonoBehaviour
             damageUpgradeValueText.text = "";
             damageUpgradeLevelText.text = "";
             damageMaxedText.text = "Maxed";
+            damageArrow.SetActive(false);
         }
         EventSystem.current.SetSelectedGameObject(null);
     }
@@ -231,6 +233,7 @@ public class UpgradeManager : MonoBehaviour
             armorUpgradeValueText.text = "";
             armorUpgradeLevelText.text = "";
             armorMaxedText.text = "Maxed";
+            armorArrow.SetActive(false);
         }
         EventSystem.current.SetSelectedGameObject(null);
     }
@@ -302,6 +305,7 @@ public class UpgradeManager : MonoBehaviour
             healthUpgradePriceText.text = "";
             healthUpgradeValueText.text = "";
             healthMaxedText.text = "Maxed";
+            healthArrow.SetActive(false);
             healthUpgradeButton.interactable = false;  // Disable button
         }
 
@@ -321,6 +325,7 @@ public class UpgradeManager : MonoBehaviour
             damageUpgradePriceText.text = "";
             damageUpgradeValueText.text = "";
             damageMaxedText.text = "Maxed";
+            damageArrow.SetActive(false);
             damageUpgradeButton.interactable = false;  // Disable button
         }
 
@@ -340,6 +345,7 @@ public class UpgradeManager : MonoBehaviour
             armorUpgradePriceText.text = "";
             armorUpgradeValueText.text = "";
             armorMaxedText.text = "Maxed";
+            armorArrow.SetActive(false);
             armorUpgradeButton.interactable = false;  // Disable button
         }
     }

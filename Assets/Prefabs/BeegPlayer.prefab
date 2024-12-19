@@ -5144,11 +5144,12 @@ MonoBehaviour:
   maxHealth: 100
   damage: 20
   armor: 0
-  pushBackForce: 5
+  pushBackForce: 7
   bubleSound: {fileID: 8300000, guid: e96776af7e4712b4faf807ecdba2d6cc, type: 3}
   attackSound: {fileID: 8300000, guid: 3a3173b8b1ca4bf40b13aa9ed828e711, type: 3}
   attackParticle: {fileID: 198435890141970726, guid: 8333d50130027574ca8b4e0268fdd047, type: 3}
   deathBubbles: {fileID: 7199882319046699346}
+  isDead: 0
   healthBar: {fileID: 3986874386814051639}
   healthBarFill: {fileID: 3035248995842260008}
   playerVisual: {fileID: 6751712136011939584}

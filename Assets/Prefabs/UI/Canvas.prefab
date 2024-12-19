@@ -485,8 +485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7592621, y: 0}
-  m_SizeDelta: {x: -1.5185, y: 0}
+  m_AnchoredPosition: {x: 0.7592621, y: -4.1647}
+  m_SizeDelta: {x: -1.5185, y: -8.3293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &292764131107939117
 CanvasRenderer:
@@ -1564,7 +1564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 11.4, y: -58.400024}
+  m_AnchoredPosition: {x: 11.400024, y: -58.400024}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &77178092534415236
@@ -2729,16 +2729,19 @@ MonoBehaviour:
   healthUpgradePriceText: {fileID: 4289332612855913288}
   healthUpgradeLevelText: {fileID: 5533590812440770205}
   healthMaxedText: {fileID: 4149000647221403333}
+  healthArrow: {fileID: 5397949235477925705}
   damageCurrentValueText: {fileID: 1830368651065393125}
   damageUpgradeValueText: {fileID: 4537633426209805239}
   damageUpgradePriceText: {fileID: 277707871877713844}
   damageUpgradeLevelText: {fileID: 9021668339878982778}
   damageMaxedText: {fileID: 3627967788144009991}
+  damageArrow: {fileID: 7617371055424765280}
   armorCurrentValueText: {fileID: 7023776973118166211}
   armorUpgradeValueText: {fileID: 2804714268157498558}
   armorUpgradePriceText: {fileID: 8083825450987615146}
   armorUpgradeLevelText: {fileID: 209206049614868418}
   armorMaxedText: {fileID: 3667212183901729476}
+  armorArrow: {fileID: 1529174316309936618}
   healthUpgradePrices: 050000000a000000140000001e000000280000003c00000050000000640000007d00000096000000c8000000fa0000002c01000077010000c2010000260200008a020000ee02000052030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000
   healthUpgradeValues:
   - 15
@@ -2898,7 +2901,6 @@ MonoBehaviour:
   maxHealthUpgradeLevel: 49
   maxDamageUpgradeLevel: 49
   maxArmorUpgradeLevel: 49
-  maxedText: {fileID: 0}
 --- !u!114 &7992395540740190945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4048,8 +4050,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7592621, y: 0}
-  m_SizeDelta: {x: -1.5185, y: 0}
+  m_AnchoredPosition: {x: 0.7592621, y: -4.1647}
+  m_SizeDelta: {x: -1.5185, y: -8.3293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2458087890000993998
 CanvasRenderer:
@@ -4513,7 +4515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 11.9, y: -8.400024}
+  m_AnchoredPosition: {x: 11.900024, y: -8.400024}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8037743854883064761
@@ -4901,8 +4903,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7592621, y: 0}
-  m_SizeDelta: {x: -1.5185, y: 0}
+  m_AnchoredPosition: {x: 0.7592621, y: -4.1647}
+  m_SizeDelta: {x: -1.5185, y: -8.3293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8790890883959130179
 CanvasRenderer:
