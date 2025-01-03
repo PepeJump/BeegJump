@@ -5610,7 +5610,7 @@ MonoBehaviour:
   rewardURLPopUp: {fileID: 7467998411156112006}
   openURLButton: {fileID: 6871467472858393319}
   closePopUpButton: {fileID: 4449759376743559450}
-  rewardURL: https://github.com/PepeJump/BeegJump
+  rewardURL: https://www.youtube.com/watch?v=xvFZjo5PgG0
   popUpSound: {fileID: 8300000, guid: 9a3bae4da5c749141940efd7a03014ae, type: 3}
 --- !u!1 &6551034100070437796
 GameObject:
