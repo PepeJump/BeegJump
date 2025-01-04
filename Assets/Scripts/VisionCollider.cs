@@ -3,31 +3,29 @@ using UnityEngine;
 
 public class VisionCollider : MonoBehaviour
 {
-    private TurretController turretController; // reference to the TurretController script
+    private TurretController turretController; // Reference to the corresponding TurretController
 
     void Start()
     {
-        // find the TurretController script
-        turretController = GameObject.Find("Turret").GetComponent<TurretController>();
+        // Get the TurretController attached to the parent object
+        turretController = GetComponentInChildren<TurretController>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // check if the player has entered the vision range
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             turretController.isPlayerInVisionRange = true;
-            // start shooting coroutine
-            turretController.StartCoroutine(turretController.ShootContinuously());
+            turretController.StartShooting(); // Start shooting properly
         }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        // check if the player has exited the vision range
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             turretController.isPlayerInVisionRange = false;
+            turretController.StopShooting(); // Stop shooting properly
         }
     }
 }

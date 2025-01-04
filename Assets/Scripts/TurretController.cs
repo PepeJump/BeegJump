@@ -3,82 +3,85 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
-    public GameObject projectilePrefab; // your projectile prefab
-    public Transform shootPoint; // the point where the projectile is spawned
+    public GameObject projectilePrefab; // Projectile prefab
+    public Transform shootPoint; // Point where the projectile is spawned
     public float bulletSpeed = 5f;
-    public float shootCooldown = 1f; // adjust the rate of fire
+    public float shootCooldown = 1f; // Fire rate cooldown
 
-    private Collider2D visionCollider; // reference to the collider
+    public AudioClip turretAttackSound;
 
-    private Transform player; // the player's transform
-    public bool isPlayerInVisionRange = false; // flag to check if player is in vision range
-    private bool isCooldownActive = false; // flag to check if cooldown is active
-
+    private Transform player; // The player's transform
+    public bool isPlayerInVisionRange = false; // Flag to check if player is in range
+    private bool isCooldownActive = false; // Cooldown flag
     private Vector3 direction;
+
+    public Coroutine shootingCoroutine; // Store coroutine reference
 
     void Start()
     {
-        // find the player's transform
+        // Find the player's transform
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        // find the collider
-        visionCollider = GameObject.Find("VisionCollider").GetComponent<Collider2D>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public void StartShooting()
     {
-        // check if the player has entered the vision range
-        if (collision.gameObject.CompareTag("Player"))
+        if (shootingCoroutine == null)
         {
-            isPlayerInVisionRange = true;
-            // start shooting coroutine
-            StartCoroutine(ShootContinuously());
+            shootingCoroutine = StartCoroutine(ShootContinuously());
         }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    public void StopShooting()
     {
-        // check if the player has exited the vision range
-        if (collision.gameObject.CompareTag("Player"))
+        if (shootingCoroutine != null)
         {
-            isPlayerInVisionRange = false;
+            StopCoroutine(shootingCoroutine);
+            shootingCoroutine = null;
         }
     }
 
     void RotateTurret()
     {
-        // calculate the direction from the turret to the player
-        direction = player.position - transform.position;
-
-        // calculate the angle between the turret and the player
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // set the turret's rotation
-        transform.eulerAngles = new Vector3(0, 0, angle);
+        if (player != null)
+        {
+            direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.eulerAngles = new Vector3(0, 0, angle);
+        }
     }
 
     void Shoot()
     {
-        // instantiate the projectile
-        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+        AudioManager.instance.PlaySoundSFX(turretAttackSound);
 
-        // set the projectile's velocity
-        projectile.GetComponent<Rigidbody2D>().velocity = direction.normalized * bulletSpeed;
+        // Instantiate projectile
+        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+
+        // Get Rigidbody2D component
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+
+        // Set velocity
+        rb.velocity = direction.normalized * bulletSpeed;
+
+        // Set projectile rotation to match movement direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
+
 
     public IEnumerator ShootContinuously()
     {
         while (isPlayerInVisionRange)
         {
-            RotateTurret(); // rotate the turret towards the player continuously
+            RotateTurret();
             if (!isCooldownActive)
             {
                 Shoot();
-                // start the cooldown coroutine
                 StartCoroutine(ShootCooldown());
             }
-            yield return null;
+            yield return null; // Wait one frame before checking again
         }
+        shootingCoroutine = null; // Reset coroutine reference when exiting loop
     }
 
     IEnumerator ShootCooldown()

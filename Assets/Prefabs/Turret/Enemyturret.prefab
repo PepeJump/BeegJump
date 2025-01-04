@@ -60,7 +60,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6228330048251673414}
   - {fileID: 4329388331960311506}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -90,11 +89,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4566523474091957678}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6228330048251673414}
   m_Father: {fileID: 3175309022140555967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3912656278958072301
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.1503768, y: 0.33287573}
+  m_Offset: {x: 1.7596254, y: -0.4515381}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -140,7 +140,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.421962, y: 2.970624}
+  m_Size: {x: 6.594185, y: 4.5394516}
   m_EdgeRadius: 0
 --- !u!114 &5143982506972766054
 MonoBehaviour:
@@ -179,14 +179,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6957171101153754375}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: -0.03, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: -0.030000687, z: 0}
   m_LocalScale: {x: 1.4243, y: 1.4243, z: 1.4243}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7867015140655468814}
   - {fileID: 5638725969894110957}
-  m_Father: {fileID: 3175309022140555967}
+  m_Father: {fileID: 4329388331960311506}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &6640054959740191367
 MonoBehaviour:
@@ -204,6 +204,7 @@ MonoBehaviour:
   shootPoint: {fileID: 7867015140655468814}
   bulletSpeed: 4
   shootCooldown: 2
+  turretAttackSound: {fileID: 8300000, guid: c8e1fff669dbb1d4ba44b78664f71fe7, type: 3}
   isPlayerInVisionRange: 0
 --- !u!1 &9015922397263721744
 GameObject:
