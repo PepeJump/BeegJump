@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour
 
     private int GetTotalLevels()
     {
-        return 4; // Set this to the total number of levels in your game
+        return 5; // Set this to the total number of levels in your game
     }
 }
 

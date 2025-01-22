@@ -166,7 +166,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06442989, y: 0.7379879}
+  m_Offset: {x: -0.06442988, y: 0.74678135}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -177,7 +177,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2668097, y: 1.825535}
+  m_Size: {x: 0.2668097, y: 1.8079481}
   m_EdgeRadius: 0
 --- !u!1 &6794810153251815347
 GameObject:
@@ -208,7 +208,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.5, y: -3.47, z: 0.56099653}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7744725257496403990}
@@ -270,7 +270,7 @@ Animator:
   m_GameObject: {fileID: 6794810153251815347}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e2c41fea81e8f4041aea03212d6655a4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9c2bc80bea2c2ef4eac9c39c81512be6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -308,7 +308,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.201, y: -0.241, z: -1.0746}
-  m_LocalScale: {x: 0.165, y: 0.165, z: 0.165}
+  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5858577278008950586}
@@ -354,7 +354,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 99
-  m_Sprite: {fileID: 21300000, guid: 20426e49dc6e7a64e8d363395a4691f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8dc6e5d96ff2641479e7874c118d861c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -407,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19602037749270394, guid: b35149950ab471f4989eefbfd7dd7095, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.1026578
+      value: -2.102658
       objectReference: {fileID: 0}
     - target: {fileID: 19602037749270394, guid: b35149950ab471f4989eefbfd7dd7095, type: 3}
       propertyPath: m_LocalScale.y

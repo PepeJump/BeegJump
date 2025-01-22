@@ -62,9 +62,9 @@ public class UpgradeManager : MonoBehaviour
     private int armorUpgradeLevel = 0;
 
     // Max levels for each upgrade
-    public int maxHealthUpgradeLevel = 49;
-    public int maxDamageUpgradeLevel = 49;
-    public int maxArmorUpgradeLevel = 49;
+    public int maxHealthUpgradeLevel = 59;
+    public int maxDamageUpgradeLevel = 59;
+    public int maxArmorUpgradeLevel = 59;
 
     // Reference to the MoneyManager
     private MoneyManager moneyManager;
