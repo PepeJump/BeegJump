@@ -15,18 +15,25 @@ public class PlayerPrefsHandler : MonoBehaviour
         //clearAllButton.onClick.AddListener(ClearAllProgress);
         //clearLevelButton.onClick.AddListener(() => ClearLevelProgress(1)); // Example for Level 1
     }
+    private void Update()
+    {
+        ClearAllProgress();
+    }
 
     // Method to clear all PlayerPrefs
     void ClearAllProgress()
     {
-        PlayerPrefs.DeleteAll();
-        Debug.Log("All player progress has been cleared.");
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            PlayerPrefs.DeleteAll();
+            Debug.Log("All player progress has been cleared.");
+        }
     }
 
     // Method to clear specific level progress
     void ClearLevelProgress(int levelIndex)
     {
-        if (clearLevels == true)
+        if (Input.GetKeyDown(KeyCode.J))
         {
             PlayerPrefs.DeleteKey("Level" + levelIndex + "Unlocked");
             Debug.Log("Level " + levelIndex + " progress has been cleared.");

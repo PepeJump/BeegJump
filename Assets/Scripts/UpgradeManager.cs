@@ -136,6 +136,8 @@ public class UpgradeManager : MonoBehaviour
 
             // Reset the maxed text
             healthMaxedText.text = "";
+
+            LoadUpgrades();
         }
         else if(moneyManager.currentMoney <= healthUpgradePrices[healthUpgradeLevel])
         {
@@ -178,6 +180,7 @@ public class UpgradeManager : MonoBehaviour
 
             // Reset the maxed text
             damageMaxedText.text = "";
+            LoadUpgrades();
         }
         else if (moneyManager.currentMoney <= healthUpgradePrices[healthUpgradeLevel])
         {
@@ -220,6 +223,7 @@ public class UpgradeManager : MonoBehaviour
 
             // Reset the maxed text
             armorMaxedText.text = "";
+            LoadUpgrades();
         }
         else if (moneyManager.currentMoney <= healthUpgradePrices[healthUpgradeLevel])
         {
@@ -263,10 +267,10 @@ public class UpgradeManager : MonoBehaviour
         armorUpgradeLevel = PlayerPrefs.GetInt("ArmorUpgradeLevel", 0);
 
         // Update the player's stats based on the loaded upgrade levels
-        player.maxHealth = 100f + healthUpgradeValues.GetRange(0, healthUpgradeLevel).Sum();
-        player.currentHealth = 100f + healthUpgradeValues.GetRange(0, healthUpgradeLevel).Sum();
-        player.damage = 20f + damageUpgradeValues.GetRange(0, damageUpgradeLevel).Sum();
-        player.armor = 5f + armorUpgradeValues.GetRange(0, armorUpgradeLevel).Sum();
+        player.maxHealth = 200f + healthUpgradeValues.GetRange(0, healthUpgradeLevel).Sum();
+        player.currentHealth = 200f + healthUpgradeValues.GetRange(0, healthUpgradeLevel).Sum();
+        player.damage = 40f + damageUpgradeValues.GetRange(0, damageUpgradeLevel).Sum();
+        player.armor = 6f + armorUpgradeValues.GetRange(0, armorUpgradeLevel).Sum();
 
         // Update the UI with the loaded upgrade levels
         healthUpgradeLevelText.text = "Lvl" + healthUpgradeLevel;

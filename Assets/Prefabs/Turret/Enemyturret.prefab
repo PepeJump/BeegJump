@@ -202,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2590938598272160215, guid: 5fdcd536c4932ae4caf5ce7e92829b14, type: 3}
   shootPoint: {fileID: 7867015140655468814}
-  bulletSpeed: 4
+  bulletSpeed: 5
   shootCooldown: 2
   turretAttackSound: {fileID: 8300000, guid: c8e1fff669dbb1d4ba44b78664f71fe7, type: 3}
   isPlayerInVisionRange: 0

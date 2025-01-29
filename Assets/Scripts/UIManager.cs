@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
     {
         // Ensure the panel is initially inactive
         levelSelectionPanel.SetActive(false);
-        upgradePanel.SetActive(false);
+        upgradePanel.SetActive(true);
 
 
         // Add listener to the toggle button to open/close the panel
