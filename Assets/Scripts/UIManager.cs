@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     public Button[] levelButtons; // Buttons for each level
 
     private bool isPanelActive = false;
-    private bool isUpgradePanelActive = false;
+    private bool isUpgradePanelActive = true;
 
     private void Awake()
     {

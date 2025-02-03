@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -31,6 +32,15 @@ public class PlayerMovement : MonoBehaviour
     private float lastMoveDirection = 0f; // Stores the last horizontal input direction
     private bool wasGrounded = false; // Stores the previous grounded state
 
+    [Header("Jump Power UI")]
+    public Slider jumpPowerSlider;             // Reference to the Slider
+    public Image jumpPowerFill;                // Reference to the Fill Image
+    public Color minJumpColor = Color.green;   // Color when jump power is low
+    public Color maxJumpColor = Color.red;     // Color when jump power is max
+
+    [Range(0f, 1f)]
+    public float sliderVisibilityThreshold = 0.1f;
+
     private AudioSource audioSource; // Reference to the AudioSource component
     private Player player;
 
@@ -58,6 +68,12 @@ public class PlayerMovement : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>(); // Add an AudioSource component if it doesn't exist
         }
+
+        if (jumpPowerSlider != null)
+        {
+            jumpPowerSlider.value = 0f;
+            jumpPowerSlider.gameObject.SetActive(false); // Hidden initially
+        }
     }
 
     void Update()
@@ -78,45 +94,57 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleInput()
     {
-        if (player.isDead == true)
+        if (player.isDead)
             return;
 
-        // Start holding the jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             isHoldingJump = true;
             holdTime = 0f;
         }
 
-        // Continuously update the direction based on input
         if (isHoldingJump)
         {
-            moveDirection = Input.GetAxisRaw("Horizontal"); // -1 for left, 1 for right, 0 for no input
+            moveDirection = Input.GetAxisRaw("Horizontal");
 
-            // If there is horizontal input, update the lastMoveDirection
             if (moveDirection != 0)
-            {
                 lastMoveDirection = moveDirection;
-            }
 
             holdTime += Time.deltaTime;
+            holdTime = Mathf.Min(holdTime, maxHoldTime); // Clamp hold time
 
-            //Collider size change
+            float normalizedPower = holdTime / maxHoldTime;
+
+            if (jumpPowerSlider != null)
+            {
+                jumpPowerSlider.value = normalizedPower;
+
+                // Show slider only if power exceeds the threshold
+                jumpPowerSlider.gameObject.SetActive(normalizedPower >= sliderVisibilityThreshold);
+
+                // Apply gradient color
+                if (jumpPowerFill != null)
+                    jumpPowerFill.color = Color.Lerp(minJumpColor, maxJumpColor, normalizedPower);
+            }
+
             playerCollider.size = colliderXHeight;
             playerCollider.offset = colliderXOffset;
-
         }
 
-        // Release jump button
         if (isHoldingJump && Input.GetButtonUp("Jump"))
         {
             Jump();
             isHoldingJump = false;
-            lastMoveDirection = 0f; // Reset the last remembered horizontal input after the jump
+            lastMoveDirection = 0f;
 
-            //Collider size reset
             playerCollider.size = colliderDefaultXHeight;
             playerCollider.offset = colliderDefaultXOffset;
+
+            if (jumpPowerSlider != null)
+            {
+                jumpPowerSlider.value = 0f;
+                jumpPowerSlider.gameObject.SetActive(false); // Hide when jump is released
+            }
         }
     }
 

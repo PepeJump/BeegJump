@@ -228,8 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d648c36d835e0ae499990657850545bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2500
-  damage: 180
+  maxHealth: 1300
+  damage: 125
   moneyReward: 5000
   healthBarFill: {fileID: 9069694146454637357}
   spriteRenderer: {fileID: 9115770546599477379}
